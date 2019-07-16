@@ -1,0 +1,27 @@
+{% extends "layout.html" %}
+{% block content %}
+<div class="media-block" style="background: #fafafa">
+        <table class="table table-hover">
+                        <tr>
+                            <th>Email</th>
+                            <th>Round1</th>
+                            <th>Round2</th>
+                            <th>Round3</th>
+                            <th>Round4</th>
+                            <th>HR</th>
+                            <th>Offer</th>
+                        </tr>
+                        <tr>
+                         {% for i in result %}
+                            <td>{{ i }}</td>
+                         {% endfor %}
+                        </tr>
+                    </table>
+    </div>
+{% endblock content %}
+
+{% block smallcontent %}
+<form action="{{ url_for('track') }}">
+<button class="btn btn-outline-info" type="submit">Update Status</button>
+    </form>
+{% endblock smallcontent %}
